@@ -1,4 +1,3 @@
-```markdown
 # Autonomous Drone Interceptor System
 
 Air-to-Air drone interception tracking system built using ROS2 and Gazebo.
@@ -6,13 +5,13 @@ Air-to-Air drone interception tracking system built using ROS2 and Gazebo.
 ## Interception Mission Sequence
 
 ### 1. System Launch & Target Detection
-![System Launch](./Screenshot%202026-06-14%20222555.png)
+![System Launch](./launch.png)
 
 ### 2. Autonomous Tracking Loop
-![Autonomous Tracking](./Screenshot%202026-06-14%20222559.png)
+![Autonomous Tracking](./tracking.png)
 
 ### 3. Target Neutralization (Kill Zone Trigger)
-![Target Interception](./Screenshot%202026-06-14%20220059.png)
+![Target Interception](./interception.png)
 
 ## How to Run
 ```bash
