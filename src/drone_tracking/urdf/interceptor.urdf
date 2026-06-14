@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot name="delta_interceptor">
+
+  <!-- Base Link with collision offset to sit ON the ground -->
+  <link name="base_link">
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+
+    <!-- Visual Body -->
+    <visual>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.3"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.1 0.8 1"/>
+      </material>
+    </visual>
+
+    <!-- Collision Geometry (Keeps it from going through ground) -->
+    <collision>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.35"/>
+      </geometry>
+    </collision>
+
+    <!-- Left Wing -->
+    <visual>
+      <origin xyz="-0.05 0.15 0.05" rpy="0 0 -0.5"/>
+      <geometry>
+        <box size="0.2 0.3 0.01"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+
+    <!-- Right Wing -->
+    <visual>
+      <origin xyz="-0.05 -0.15 0.05" rpy="0 0 0.5"/>
+      <geometry>
+        <box size="0.2 0.3 0.01"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Planar Move Plugin for smooth movement -->
+  <gazebo>
+    <plugin name="planar_move_plugin" filename="libgazebo_ros_planar_move.so">
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+    </plugin>
+  </gazebo>
+
+</robot>

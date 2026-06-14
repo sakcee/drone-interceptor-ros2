@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="enemy_drone">
+
+  <link name="base_link">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <ros>
+        <namespace></namespace>
+      </ros>
+      <update_rate>100</update_rate>
+      <publish_rate>50</publish_rate>
+      <robot_base_frame>base_link</robot_base_frame>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
+    </plugin>
+  </gazebo>
+
+</robot>
