@@ -1,8 +1,8 @@
-# Autonomous Drone Interceptor System
+# Autonomous Drone Interceptor System:
 
 Air-to-Air drone interception tracking system built using ROS2 and Gazebo.
 
-## Interception Mission Sequence
+## Interception Mission Sequence:
 
 ### 1. System Launch & Target Detection
 ![System Launch](./launch.png)
